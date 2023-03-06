@@ -16,6 +16,9 @@ public class ListOfFlowers {
         try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(filename)))) {
             while (scanner.hasNextLine()) {
                 System.out.println(scanner.nextLine());
+//                String line = scanner.nextLine();
+//                String[] items = line.split("\t");
+
 
             }
         } catch (FileNotFoundException e) {
