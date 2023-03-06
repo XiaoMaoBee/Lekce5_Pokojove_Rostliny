@@ -28,23 +28,6 @@ public class Plant {
     }
     ///endregion
 
-
-// neukáže obě chyby i když je splněna podmínka pro vyhození
-    public String getWateringInfo(Plant plant) throws PlantException {
-
-        if (plant.getFrequencyOfWatering() <= 0) {
-            throw new PlantException("Next recommended watering is zero, " +
-                    "or negative amount of days from the last watering");
-        } else if (plant.getLastWatering().isBefore(plant.getPlanted())) {
-            throw new PlantException("Last date of waterring is older than a plant date");
-        }
-        return "Flower: " + plant.getName() + ", Last watering: " + plant.getLastWatering() +
-                ", Next watering: " + (plant.getLastWatering().plusDays(frequencyOfWatering));
-
-
-    }
-
-
     ///region GETTERS/SETTERS
 
     public String getName() {
@@ -89,4 +72,29 @@ public class Plant {
 
 
     ///endregion
+
+
+// neukáže obě chyby i když je splněna podmínka pro vyhození
+    public String getWateringInfo(Plant plant) throws PlantException {
+
+        if (plant.getFrequencyOfWatering() <= 0) {
+            throw new PlantException("Next recommended watering is zero, " +
+                    "or negative amount of days from the last watering");
+        } else if (plant.getLastWatering().isBefore(plant.getPlanted())) {
+            throw new PlantException("Last date of waterring is older than a plant date");
+        }
+        return "Flower: " + plant.getName() + ", Last watering: " + plant.getLastWatering() +
+                ", Next watering: " + (plant.getLastWatering().plusDays(frequencyOfWatering));
+
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Name: " + name + ", " +
+                "Notes: " + notes + ", " +
+                "Planted: " + planted + ", " +
+                "LastWatering: " + lastWatering + ", " +
+                "FrequencyOfWatering: " + frequencyOfWatering + "\n";
+    }
 }
