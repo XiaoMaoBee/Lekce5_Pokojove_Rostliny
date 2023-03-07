@@ -23,7 +23,7 @@ public class Main {
         //12.Načtení ze souboru
         ListOfFlowers list = new ListOfFlowers();
         try {
-            list.addAllFromFile("kvetiny.txt");
+            list.addAllFromFile("kvetiny-spatne-frekvence.txt");
         } catch (PlantException e) {
             System.err.println(e.getLocalizedMessage());
         }

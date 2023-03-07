@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,7 +29,7 @@ public class ListOfFlowers {
 
                flowerList.add(plant);
             }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | DateTimeParseException | NumberFormatException e) {
             throw new PlantException(e.getLocalizedMessage());
         }
     }
