@@ -27,3 +27,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### pokus engeto cviceni ###
+*.tmp
+*.tmp1
+konkretni.txt
+
